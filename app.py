@@ -1,5 +1,5 @@
 """
-SIF Precursor AI Platform ? Enterprise Production Application
+SIF Precursor AI Platform 🛢️ Enterprise Production Application
 Oil India Limited (Smart India Hackathon Project)
 """
 import streamlit as st
@@ -8,7 +8,7 @@ import datetime
 # 1. Page Configuration
 st.set_page_config(
     page_title="SIF AI Platform | Oil India",
-    page_icon="???",
+    page_icon="🛢️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -59,7 +59,7 @@ if not st.session_state["authenticated"]:
     st.markdown("<br/>", unsafe_allow_html=True)
     col_l, col_center, col_r = st.columns([1, 1.2, 1])
     with col_center:
-        st.markdown("### ?? Oil India HSE Security Gate")
+        st.markdown("### 🔐 Oil India HSE Security Gate")
         st.info("Enter authorized Security PIN to access SIF Triage & Intelligence Platform.")
         pin_input = st.text_input("Enter Access PIN:", type="password", placeholder="Default: 1959")
         if st.button("Unlock Dashboard", type="primary", use_container_width=True):
@@ -73,14 +73,14 @@ if not st.session_state["authenticated"]:
 
 # 7. Sidebar Navigation & Global Controls
 with st.sidebar:
-    st.markdown("## ??? Oil India Limited")
+    st.markdown("## 🛢️ Oil India Limited")
     st.caption("SIF AI Intelligence & Precursor Detection")
     st.divider()
 
     # Theme Switcher
-    st.markdown("### ?? Display Preferences")
+    st.markdown("### 🎨 Display Preferences")
     current_is_dark = st.session_state["theme"] == "dark"
-    theme_toggle = st.toggle("?? Dark Mode", value=current_is_dark)
+    theme_toggle = st.toggle("🌙 Dark Mode", value=current_is_dark)
     new_theme = "dark" if theme_toggle else "light"
     if new_theme != st.session_state["theme"]:
         st.session_state["theme"] = new_theme
@@ -94,12 +94,12 @@ with st.sidebar:
         kpis = repo.get_kpi_summary()
     st.metric("Total Incident Logs in DB", kpis["total_reports"])
     if kpis["total_reports"] > 0:
-        st.caption(f"?? {kpis['critical_pct']:.1f}% Critical Precursor Rate")
+        st.caption(f"⚠️ {kpis['critical_pct']:.1f}% Critical Precursor Rate")
 
     st.divider()
 
     # LLM API Token & Cost Tracker
-    st.markdown("### ?? Session AI Consumption")
+    st.markdown("### 🤖 Session AI Consumption")
     render_token_tracker(
         prompt_tokens=st.session_state["session_tokens"] // 2,
         completion_tokens=st.session_state["session_tokens"] // 2,
@@ -110,7 +110,7 @@ with st.sidebar:
     st.divider()
 
     # Emergency Contacts
-    st.markdown("### ?? Emergency Contacts")
+    st.markdown("### 🆘 Emergency Contacts")
     for h in EMERGENCY_HELPLINES:
         st.markdown(
             f"<div class='helpline-box'><span>{h['icon']} {h['label']}</span>"
@@ -119,22 +119,22 @@ with st.sidebar:
         )
 
     st.divider()
-    st.caption("v2.0.0 Enterprise ? Smart India Hackathon")
+    st.caption("v2.0.0 Enterprise 🚀 Smart India Hackathon")
 
 # 8. Main Brand Header
 render_header()
-st.title("?? Smart SIF Precursor Detection & Prevention Platform")
+st.title("🛢️ Smart SIF Precursor Detection & Prevention Platform")
 st.markdown(
     "Domain-grounded AI/NLP engine flagging **Serious Injury & Fatality (SIF) precursors** "
-    "in unsafe acts, unsafe conditions, and near-miss reports ? before they escalate to catastrophe."
+    "in unsafe acts, unsafe conditions, and near-miss reports — before they escalate to catastrophe."
 )
 
 # 9. Main Application Tabs
 tab1, tab2, tab3, tab4 = st.tabs([
-    "?? Live Analyzer",
-    "?? Batch Analytics & Forecasts",
-    "?? Database Explorer & Audit",
-    "?? SIF Methodology & Guide"
+    "🔍 Live Analyzer",
+    "📊 Batch Analytics & Forecasts",
+    "🗄️ Database Explorer & Audit",
+    "📖 SIF Methodology & Guide"
 ])
 
 with tab1:
