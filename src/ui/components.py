@@ -81,9 +81,9 @@ def render_factor_chart(matched_energy: List[str], matched_controls: List[str], 
     rows = []
     for e in matched_energy:
         weight = HIGH_ENERGY_SOURCES.get(e, {}).get("weight", 8)
-        rows.append({"Factor": f"? {e}", "Contribution": weight, "Type": "High-Energy Source"})
+        rows.append({"Factor": f"⚡ {e}", "Contribution": weight, "Type": "High-Energy Source"})
     for c in matched_controls:
-        rows.append({"Factor": f"?? {c}", "Contribution": 6, "Type": "Control / Barrier Failure"})
+        rows.append({"Factor": f"🛑 {c}", "Contribution": 6, "Type": "Control / Barrier Failure"})
 
     if not rows:
         return None
@@ -162,7 +162,7 @@ def render_emergency_banner(is_critical: bool = False):
             f"""
 <div class='helpline-critical'>
     <div style='font-size:1.1rem; font-weight:800; color:#ef4444; margin-bottom:6px;'>
-        ?? CRITICAL SIF PRECURSOR DETECTED ? IMMEDIATE STOP-WORK & ESCALATION
+        🚨 CRITICAL SIF PRECURSOR DETECTED 🚨 IMMEDIATE STOP-WORK & ESCALATION
     </div>
     <p style='color:#cbd5e1; margin:0 0 10px 0; font-size:0.9rem;'>
         This incident involves unmitigated high energy and a barrier failure. 
