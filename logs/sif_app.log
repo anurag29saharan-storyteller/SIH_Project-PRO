@@ -1,0 +1,6 @@
+[2026-08-30 21:55:53] [WARNING] [sif_platform.semantic_engine:32]: SentenceTransformers unavailable (No module named 'sentence_transformers'). Using TF-IDF vectorizer fallback.
+[2026-08-30 21:55:53] [INFO] [sif_platform.forecasting_engine:67]: Prophet not used (No module named 'prophet'). Utilizing Statsmodels / Poly trend fallback.
+[2026-08-30 21:56:26] [WARNING] [sif_platform.semantic_engine:32]: SentenceTransformers unavailable (No module named 'sentence_transformers'). Using TF-IDF vectorizer fallback.
+[2026-08-30 21:56:26] [INFO] [sif_platform.forecasting_engine:67]: Prophet not used (No module named 'prophet'). Utilizing Statsmodels / Poly trend fallback.
+[2026-08-30 21:57:21] [WARNING] [sif_platform.semantic_engine:32]: SentenceTransformers unavailable (No module named 'sentence_transformers'). Using TF-IDF vectorizer fallback.
+[2026-08-30 21:57:21] [INFO] [sif_platform.forecasting_engine:67]: Prophet not used (No module named 'prophet'). Utilizing Statsmodels / Poly trend fallback.

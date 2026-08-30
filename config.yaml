@@ -1,0 +1,165 @@
+app:
+  name: "SIF Precursor AI Intelligence Platform"
+  organization: "Oil India Limited"
+  project: "Smart India Hackathon (SIH)"
+  version: "2.0.0 Enterprise"
+  default_theme: "dark"
+  default_engine: "local"
+
+security:
+  auth_enabled: false  # Set to true to require PIN / Login
+  default_pin: "1959"  # Oil India founding year
+  session_timeout_minutes: 120
+
+database:
+  url: "sqlite:///data/sif_dashboard.db"
+  echo_sql: false
+
+llm:
+  openai:
+    default_model: "gpt-4o-mini"
+    pricing:
+      input_per_million: 0.15
+      output_per_million: 0.60
+  anthropic:
+    default_model: "claude-3-haiku-20240307"
+    pricing:
+      input_per_million: 0.25
+      output_per_million: 1.25
+  ollama:
+    base_url: "http://localhost:11434"
+    default_model: "llama3"
+  huggingface:
+    model_url: "https://api-inference.huggingface.co/models/facebook/bart-large-mnli"
+
+severity_thresholds:
+  critical_min_score: 80
+  potential_min_score: 50
+
+high_energy_sources:
+  "Fall from Height":
+    weight: 9
+    keywords: ["fall", "falling", "height", "scaffold", "harness", "ladder", "roof", "edge", "elevated", "platform", "gir gaya", "girna", "uchai", "uncha", "chhat"]
+  "Struck-By / Vehicle":
+    weight: 8
+    keywords: ["struck", "vehicle", "forklift", "collision", "run over", "reversing", "traffic", "dumper", "truck", "gaadi", "takkar", "vehicle se takra"]
+  "Caught-in / Machinery":
+    weight: 8
+    keywords: ["caught", "machinery", "conveyor", "rotating", "pinch point", "entangled", "unguarded machine", "machine mein fasa", "haath fas gaya"]
+  "Electrical":
+    weight: 9
+    keywords: ["electrical", "shock", "voltage", "live wire", "cable", "electrocution", "panel", "current lag gaya", "bijli", "high voltage", "hv line"]
+  "Fire / Explosion":
+    weight: 10
+    keywords: ["fire", "explosion", "flammable", "spark", "ignition", "hot work", "flash fire", "aag", "blast", "visfot", "chingari"]
+  "Chemical / Gas Release":
+    weight: 9
+    keywords: ["leak", "gas", "toxic", "chemical spill", "h2s", "fume", "vapour", "vapor", "poisonous gas", "gas rissav", "chemical leak", "rasayan"]
+  "Lifting / Crane Ops":
+    weight: 8
+    keywords: ["crane", "lifting", "load", "rigging", "hoist", "suspended", "sling", "snap", "crane operation", "bhari saman utha", "load gira"]
+  "Confined Space":
+    weight: 10
+    keywords: ["confined space", "tank entry", "vessel entry", "manhole", "oxygen deficient", "band jagah", "tank ke andar"]
+  "Excavation / Trenching":
+    weight: 7
+    keywords: ["excavation", "trench", "collapse", "underground", "shoring", "khudai", "gadha"]
+  "Working Offshore / Marine Rig":
+    weight: 8
+    keywords: ["offshore", "rig floor", "derrick", "overboard", "samudra", "jahaz"]
+  "Pressure / Steam Systems":
+    weight: 8
+    keywords: ["pressure vessel", "steam leak", "high pressure", "boiler", "rupture", "burst pipe"]
+  "Radiation / Hazardous Energy":
+    weight: 9
+    keywords: ["radiation", "radioactive source", "gamma", "x-ray exposure", "isotope"]
+
+control_failure_markers:
+  - "without harness"
+  - "no harness"
+  - "not wearing"
+  - "without ppe"
+  - "no ppe"
+  - "bypassed"
+  - "disabled"
+  - "unguarded"
+  - "no permit"
+  - "without permit"
+  - "not isolated"
+  - "no barricade"
+  - "unauthorized"
+  - "overloaded"
+  - "no lockout"
+  - "without lockout"
+  - "failed"
+  - "malfunctioned"
+  - "not secured"
+  - "no signal person"
+  - "no banksman"
+  - "worn out"
+  - "expired inspection"
+  - "harness nahi"
+  - "permit nahi"
+  - "bina permit"
+  - "bina harness"
+  - "bina ppe"
+  - "safety belt nahi"
+  - "guard hataya"
+  - "check nahi kiya"
+  - "training nahi"
+  - "not trained"
+  - "improper storage"
+  - "no supervision"
+  - "no isolation"
+
+locations:
+  "Duliajan Operational HQ":
+    lat: 27.3591
+    lon: 95.3182
+    state: "Assam"
+    type: "Headquarters"
+  "Well Pad A (Naharkatiya)":
+    lat: 27.2842
+    lon: 95.2891
+    state: "Assam"
+    type: "Production Well"
+  "Refinery Unit 3 (Digboi)":
+    lat: 27.3800
+    lon: 95.6200
+    state: "Assam"
+    type: "Refinery"
+  "Numaligarh Refinery Link":
+    lat: 26.5900
+    lon: 93.7500
+    state: "Assam"
+    type: "Refinery"
+  "Pipeline Sector 7 (Moran)":
+    lat: 27.1800
+    lon: 94.9300
+    state: "Assam"
+    type: "Pipeline"
+  "Storage Yard & Logistics":
+    lat: 27.3400
+    lon: 95.3300
+    state: "Assam"
+    type: "Logistics Yard"
+  "Offshore Rig OI-2 (KG Basin)":
+    lat: 16.3500
+    lon: 82.2500
+    state: "Andhra Offshore"
+    type: "Offshore Platform"
+  "Tank Farm North":
+    lat: 27.3700
+    lon: 95.3000
+    state: "Assam"
+    type: "Storage Facility"
+  "Loading Bay & Gantry":
+    lat: 27.3620
+    lon: 95.3150
+    state: "Assam"
+    type: "Terminal"
+  "Central Workshop & Maintenance":
+    lat: 27.3550
+    lon: 95.3220
+    state: "Assam"
+    type: "Workshop"
