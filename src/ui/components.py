@@ -9,13 +9,23 @@ from src.domain.constants import HIGH_ENERGY_SOURCES, SEVERITY_LEVELS, EMERGENCY
 
 
 def render_header():
-    """Renders the dynamic enterprise brand header."""
     st.markdown(
         """
-<div class='team-banner'>
-    <div class='team-name'>OIL INDIA ? SIF INTELLIGENCE</div>
-    <div class='team-quote'>?Every near-miss is a warning whispered before disaster has to shout.?</div>
-</div>
+        <div style='text-align:center; padding:6px 0 2px;'>
+            <div style='
+                font-size:2.1rem; font-weight:900; letter-spacing:6px;
+                background: linear-gradient(90deg, #ff5c5c, #ffb84d, #5fd88f, #4dc8ff, #ff5c5c);
+                background-size: 300% auto;
+                -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+                background-clip: text;
+                animation: shine 6s linear infinite;
+            '>
+                OMEGA
+            </div>
+            <div style='color:#aab0bb; font-style:italic; font-size:0.95rem; margin-top:2px;'>
+                “Every near-miss is a warning whispered before disaster has to shout.”
+            </div>
+        </div>
         """,
         unsafe_allow_html=True
     )
